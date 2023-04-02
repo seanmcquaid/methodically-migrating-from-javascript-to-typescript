@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 
 const PostInfo = ({ post }) => {
+  console.log(post.id.slice());
   return (
     <div>
       <h1>{post.title}</h1>
