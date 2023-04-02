@@ -9,7 +9,7 @@ export const Component = () => {
   const { data, isLoading, isError } = useQuery(getPostsQuery());
 
   return (
-    <PageWrapper>
+    <PageWrapper isLoading={isLoading} isError={isError}>
       <PageHeader title="Home" />
       <PageContent>
         <Posts posts={data} />
