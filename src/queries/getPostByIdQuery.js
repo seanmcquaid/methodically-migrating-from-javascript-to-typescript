@@ -1,4 +1,4 @@
-import postsApi from '../services/postsApi.js';
+import postsApi from '../services/postsApi';
 
 const getPostByIdQuery = id => ({
   queryKey: ['getPostById', id],

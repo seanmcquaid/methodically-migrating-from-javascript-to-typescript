@@ -11,7 +11,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/post/:id',
-        lazy: () => import('../pages/PostDetails/PostDetails.jsx'),
+        lazy: () => import('../pages/PostDetails/PostDetails'),
       },
     ],
   },

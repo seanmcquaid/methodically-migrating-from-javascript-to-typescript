@@ -1,7 +1,7 @@
 import { StrictMode, startTransition, lazy, Suspense } from 'react';
 import { createRoot } from 'react-dom/client';
 import './index.css';
-import env from './env.js';
+import env from './env';
 
 const App = lazy(() => import('./App'));
 const prepare = async () => {
