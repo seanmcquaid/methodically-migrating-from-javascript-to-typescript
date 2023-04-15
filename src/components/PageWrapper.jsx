@@ -9,7 +9,9 @@ const PageWrapper = ({ children, isLoading, isError }) => {
     return <div>Error</div>;
   }
 
-  return <div className="h-full w-full">{children}</div>;
+  return (
+    <div className="h-full w-full flex flex-col items-start">{children}</div>
+  );
 };
 
 PageWrapper.propTypes = {

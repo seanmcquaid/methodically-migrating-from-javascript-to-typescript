@@ -1,10 +1,11 @@
 import PropTypes from 'prop-types';
+import PageHeader from '../../components/PageHeader.jsx';
 
 const PostInfo = ({ post }) => {
   return (
     <div>
-      <h1>{post.title}</h1>
-      <p>{post.body}</p>
+      <PageHeader title={post.title} />
+      <p className="flex items-center justify-center">{post.body}</p>
     </div>
   );
 };

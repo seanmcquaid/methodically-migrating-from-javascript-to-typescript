@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types';
 
 const PageHeader = ({ title, subtitle }) => (
-  <header>
-    <h1>{title}</h1>
-    {subtitle && <h2>{subtitle}</h2>}
+  <header className="flex items-center justify-center m-4">
+    <h1 className="font-medium text-xl">{title}</h1>
+    {subtitle && <h2 className="font-normal text-lg">{subtitle}</h2>}
   </header>
 );
 

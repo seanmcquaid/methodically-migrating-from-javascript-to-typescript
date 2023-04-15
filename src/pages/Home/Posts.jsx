@@ -3,10 +3,18 @@ import { Link } from 'react-router-dom';
 
 const Posts = ({ posts }) => {
   return (
-    <ul>
+    <ul className="flex flex-wrap">
       {posts.map(post => (
-        <li key={post.id}>
-          <Link to={`/post/${post.id}`}>{post.title}</Link>
+        <li
+          key={post.id}
+          className="border-solid border-2 border-black m-4 p-4 cursor-pointer flex-auto"
+        >
+          <Link
+            to={`/post/${post.id}`}
+            className="w-full h-full flex items-center justify-center"
+          >
+            {post.title}
+          </Link>
         </li>
       ))}
     </ul>
