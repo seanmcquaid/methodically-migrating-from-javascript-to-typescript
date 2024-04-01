@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
+import { Link } from '@remix-run/react';
 
 const Posts = ({ posts }) => {
   return (
@@ -10,7 +10,7 @@ const Posts = ({ posts }) => {
           className="border-solid border-2 border-black m-4 p-4 cursor-pointer flex-auto"
         >
           <Link
-            to={`/post/${post.id}`}
+            to={`/posts/${post.id}`}
             className="w-full h-full flex items-center justify-center"
           >
             {post.title}

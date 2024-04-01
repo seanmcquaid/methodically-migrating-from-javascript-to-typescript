@@ -1,11 +1,11 @@
-import { useNavigate, useParams } from 'react-router-dom';
+import { useNavigate, useParams } from '@remix-run/react';
 import getPostByIdQuery from '../../queries/getPostByIdQuery';
 import { useQuery } from '@tanstack/react-query';
 import PageWrapper from '../../components/PageWrapper';
 import PostInfo from './PostInfo';
 import TextButton from '../../components/TextButton.jsx';
 
-export const Component = () => {
+const PostDetailsPage = () => {
   const { id } = useParams();
   const { data, isLoading, isError } = useQuery(getPostByIdQuery(id));
   const navigate = useNavigate();
@@ -21,3 +21,5 @@ export const Component = () => {
     </PageWrapper>
   );
 };
+
+export default PostDetailsPage;
