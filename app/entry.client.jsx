@@ -1,9 +1,8 @@
-import { StrictMode, startTransition, lazy, Suspense } from 'react';
-import { createRoot } from 'react-dom/client';
-import './index.css';
+import { RemixBrowser } from '@remix-run/react';
+import { startTransition, StrictMode } from 'react';
+import { hydrateRoot } from 'react-dom/client';
 import env from './env';
 
-const App = lazy(() => import('./App'));
 const prepare = async () => {
   if (env.MODE === 'development' && env.VITE_APP_MSW_ENABLED) {
     const worker = await import('./mocks/worker');
@@ -11,14 +10,12 @@ const prepare = async () => {
   }
   return Promise.resolve();
 };
-
 prepare().then(() =>
   startTransition(() => {
-    createRoot(document.getElementById('root')).render(
+    hydrateRoot(
+      document,
       <StrictMode>
-        <Suspense>
-          <App />
-        </Suspense>
+        <RemixBrowser />
       </StrictMode>,
     );
   }),

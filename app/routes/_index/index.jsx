@@ -1,13 +1,13 @@
 import { useQuery } from '@tanstack/react-query';
-import getPostsQuery from '../../queries/getPostsQuery';
+import getPostsQuery from '../../queries/getPostsQuery.js';
 import Posts from './Posts';
-import PageWrapper from '../../components/PageWrapper';
-import PageHeader from '../../components/PageHeader';
-import PageContent from '../../components/PageContent';
+import PageWrapper from '../../components/PageWrapper.jsx';
+import PageHeader from '../../components/PageHeader.jsx';
+import PageContent from '../../components/PageContent.jsx';
 import { useState } from 'react';
 import TextInput from '../../components/TextInput.jsx';
 
-export const Component = () => {
+const HomePage = () => {
   const { data, isLoading, isError } = useQuery(getPostsQuery());
   const [searchText, setSearchText] = useState('');
   const filteredPosts = data?.filter(post =>
@@ -35,3 +35,5 @@ export const Component = () => {
     </PageWrapper>
   );
 };
+
+export default HomePage;
