@@ -9,6 +9,7 @@ const TextInput = ({ label, value, onChange, name, placeholder }) => (
       name={name}
       placeholder={placeholder}
       className="border border-black rounded-md p-2 m-2"
+      id={name}
     />
   </label>
 );
