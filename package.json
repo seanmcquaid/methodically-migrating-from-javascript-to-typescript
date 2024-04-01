@@ -7,7 +7,8 @@
     "dev": "remix vite:dev",
     "build": "remix vite:build",
     "preview": "vite preview",
-    "postinstall": "husky install"
+    "postinstall": "husky",
+    "prepare": "husky"
   },
   "dependencies": {
     "@remix-run/node": "^2.8.1",
