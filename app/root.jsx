@@ -7,23 +7,24 @@ import {
   Scripts,
   ScrollRestoration,
 } from '@remix-run/react';
+import PropTypes from 'prop-types';
 
 const queryClient = new QueryClient();
 
-export default function Root() {
+export function Layout({ children }) {
   return (
     <html lang="en" className="h-screen w-screen">
       <head>
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Vite + React</title>
+        <title>Vite + Remix</title>
         <Meta />
         <Links />
       </head>
       <body className="h-full w-full">
         <div id="root" className="h-full w-full p-4">
           <QueryClientProvider client={queryClient}>
-            <Outlet />
+            {children}
           </QueryClientProvider>
         </div>
         <Scripts />
@@ -31,4 +32,12 @@ export default function Root() {
       </body>
     </html>
   );
+}
+
+Layout.propTypes = {
+  children: PropTypes.node.isRequired,
+};
+
+export default function Root() {
+  return <Outlet />;
 }
