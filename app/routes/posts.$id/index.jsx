@@ -1,9 +1,9 @@
 import { useNavigate, useParams } from '@remix-run/react';
-import getPostByIdQuery from '../../services/queries/getPostByIdQuery';
+import getPostByIdQuery from '@/services/queries/getPostByIdQuery';
 import { useQuery } from '@tanstack/react-query';
-import PageWrapper from '../../components/PageWrapper';
+import PageWrapper from '@/components/PageWrapper';
 import PostInfo from './PostInfo';
-import TextButton from '../../components/TextButton';
+import TextButton from '@/components/TextButton';
 
 const PostDetailsPage = () => {
   const { id } = useParams();

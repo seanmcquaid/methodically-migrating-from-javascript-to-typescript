@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import PageHeader from '../../components/PageHeader';
+import PageHeader from '@/components/PageHeader';
 
 const PostInfo = ({ post }) => {
   return (
