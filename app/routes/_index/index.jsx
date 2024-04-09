@@ -1,11 +1,11 @@
 import { useQuery } from '@tanstack/react-query';
-import getPostsQuery from '../../queries/getPostsQuery.js';
+import getPostsQuery from '../../services/queries/getPostsQuery';
 import Posts from './Posts';
-import PageWrapper from '../../components/PageWrapper.jsx';
-import PageHeader from '../../components/PageHeader.jsx';
-import PageContent from '../../components/PageContent.jsx';
+import PageWrapper from '../../components/PageWrapper';
+import PageHeader from '../../components/PageHeader';
+import PageContent from '../../components/PageContent';
 import { useState } from 'react';
-import TextInput from '../../components/TextInput.jsx';
+import TextInput from '../../components/TextInput';
 
 const HomePage = () => {
   const { data, isLoading, isError } = useQuery(getPostsQuery());

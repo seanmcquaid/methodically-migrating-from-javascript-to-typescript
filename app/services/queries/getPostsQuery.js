@@ -1,4 +1,4 @@
-import postsApi from '../services/postsApi';
+import postsApi from '../postsApi';
 
 const getPostsQuery = () => ({
   queryKey: ['posts'],
