@@ -1,13 +1,13 @@
 import { useNavigate, useParams } from '@remix-run/react';
 import getPostByIdQuery from '@/services/queries/getPostByIdQuery';
 import { useQuery } from '@tanstack/react-query';
-import PageWrapper from '@/components/PageWrapper';
+import PageContent from '@/components/PageContent';
 import PostInfo from './PostInfo';
 import TextButton from '@/components/TextButton';
 
 const PostDetailsPage = () => {
   const { id } = useParams();
-  const { data, isLoading, isError } = useQuery(getPostByIdQuery(id));
+  const { data } = useQuery(getPostByIdQuery(id));
   const navigate = useNavigate();
 
   const handleBackClick = () => {
@@ -15,10 +15,10 @@ const PostDetailsPage = () => {
   };
 
   return (
-    <PageWrapper isLoading={isLoading} isError={isError}>
+    <PageContent>
       <TextButton onClick={handleBackClick} label="Back" />
       <PostInfo post={data} />
-    </PageWrapper>
+    </PageContent>
   );
 };
 
